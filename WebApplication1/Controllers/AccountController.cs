@@ -49,7 +49,7 @@ namespace WebApplication1.Controllers
             var user = await _context.AppUsers.FirstOrDefaultAsync(u => u.Email == model.Email);
             if (user == null)
             {
-                ModelState.AddModelError("", "Invalid email or password.")
+                ModelState.AddModelError("", "Invalid email or password.");
                 return View(model);
             }
             var hasher = new PasswordHasher<AppUser>();
